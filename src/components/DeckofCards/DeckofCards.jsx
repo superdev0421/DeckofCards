@@ -21,6 +21,7 @@ const DeckofCards = () => {
   const [snapValueCount, setSnapValueCount] = useState(0); // snap value count
   const [deckId, setDeckId] = useState(""); // deck id
   const [remaining, setRemaining] = useState(52); // remaining cards
+  const [cards, setCards] = useState([]);
 
   // hooks for playing the sounds
   const [playDrawSound] = useSound(btnClkSd);
@@ -38,9 +39,11 @@ const DeckofCards = () => {
         playAllSound();
       }
       // handle the snap message
+      console.log(res);
       setPrevCard(curCard);
       setCurCard(res.cards[0]);
       setRemaining(res.remaining);
+      setCards([...cards, res.cards[0].car]);
 
       if (curCard.code) {
         if (curCard.suit === res.cards[0].suit) {
@@ -97,7 +100,10 @@ const DeckofCards = () => {
             <p className="msg">SUIT MATCHES: {snapSuitCount}</p>
           </div>
         ) : (
-          <DrawButton handleClick={handleDraw} />
+          <>
+            <p>{remaining} cards remaining</p>
+            <DrawButton handleClick={handleDraw} />
+          </>
         )}
       </div>
     </div>
