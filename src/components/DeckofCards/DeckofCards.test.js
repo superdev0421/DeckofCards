@@ -106,6 +106,11 @@ describe("test DeckofCards", () => {
       jest.advanceTimersByTime(300);
     });
 
+    await waitFor(async () => {
+      drawBtn.simulate("click");
+      jest.advanceTimersByTime(300);
+    });
+
     expect(component.find("#snap_msg").getDOMNode().innerHTML).toBe(
       "SNAP SUIT!"
     );
@@ -162,6 +167,11 @@ describe("test DeckofCards", () => {
     };
 
     mockGet.mockResolvedValue(nextCard);
+
+    await waitFor(async () => {
+      drawBtn.simulate("click");
+      jest.advanceTimersByTime(300);
+    });
 
     await waitFor(async () => {
       drawBtn.simulate("click");
