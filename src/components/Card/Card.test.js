@@ -2,19 +2,24 @@ import { shallow } from "enzyme";
 
 import Card from "./Card";
 
-describe("renders Card", () => {
-  it("test empty card", () => {
+describe("test Card", () => {
+  it("render empty card", () => {
     const card = shallow(<Card cardName="" />);
     const image = card.find("img");
     expect(image).toHaveLength(0);
   });
 
-  it("test valid card", () => {
+  it("render valid card", () => {
     const cardName = "5H";
     const card = shallow(<Card cardName={cardName} />);
-
-    const image = card.find("img");
-    expect(image).toHaveLength(1);
-    expect(image.prop("src").includes(cardName)).toBe(true);
+    global.Image = class {
+      constructor() {
+        setTimeout(() => {
+          this.onload(); // simulate success
+          const image = card.find("img");
+          expect(image).toHaveLength(1);
+        }, 100);
+      }
+    };
   });
 });

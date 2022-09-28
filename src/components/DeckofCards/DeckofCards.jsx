@@ -21,7 +21,6 @@ const DeckofCards = () => {
   const [snapValueCount, setSnapValueCount] = useState(0); // snap value count
   const [deckId, setDeckId] = useState(""); // deck id
   const [remaining, setRemaining] = useState(52); // remaining cards
-  const [cards, setCards] = useState([]);
 
   // hooks for playing the sounds
   const [playDrawSound] = useSound(btnClkSd);
@@ -34,18 +33,16 @@ const DeckofCards = () => {
     playDrawSound();
     try {
       const res = await draw(deckId);
-
       if (res.remaining === 0) {
         playAllSound();
       }
-      // handle the snap message
-      console.log(res);
-      setPrevCard(curCard);
-      setCurCard(res.cards[0]);
-      setRemaining(res.remaining);
-      setCards([...cards, res.cards[0].car]);
 
-      if (curCard.code) {
+      // handle the snap message
+      setCurCard(res.cards[0]);
+      setPrevCard(curCard);
+      setRemaining(res.remaining);
+
+      if (curCard.image) {
         if (curCard.suit === res.cards[0].suit) {
           playSuitSound();
           setSnapSuitCount(snapSuitCount + 1);
@@ -68,7 +65,6 @@ const DeckofCards = () => {
     const _shuffle = async () => {
       try {
         const res = await shuffle();
-        console.log(res);
         setDeckId(res.deck_id);
         setRemaining(res.remaining);
       } catch (e) {
@@ -90,8 +86,8 @@ const DeckofCards = () => {
         )}
       </div>
       <div className="cardConatiner">
-        <Card cardName={prevCard.code} />
-        <Card cardName={curCard.code} />
+        <Card src={prevCard.image} />
+        <Card src={curCard.image} />
       </div>
       <div className="btnContainer">
         {!remaining ? (
