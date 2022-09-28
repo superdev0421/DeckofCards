@@ -25,6 +25,18 @@
   margin-top: 3rem;
 }
 
+.probabilityContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.probabilityContainer p {
+  margin-block: 0;
+}
+
 .drawButton {
   font-size: 20px;
   font-weight: bold;

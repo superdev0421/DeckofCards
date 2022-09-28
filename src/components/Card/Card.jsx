@@ -31,6 +31,8 @@ const Card = ({ src }) => {
     <div className="border border-dark cardContainer">
       {src && loadedSrc === src ? (
         <img src={src} alt={src} className="card" />
+      ) : src ? (
+        <>Loading...</>
       ) : (
         <></>
       )}
