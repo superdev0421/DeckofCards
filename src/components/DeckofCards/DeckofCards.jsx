@@ -1,17 +1,27 @@
+/**
+==========================================
+ Title:  Deck of Cards Component
+ Author: Edward
+ Date:   27 September 2022
+==========================================
+ */
+
+// External Dependencies
 import useSound from "use-sound";
 import { useEffect, useState } from "react";
 
-// sounds
-import btnClkSd from "../../assets/sounds/button-click.wav";
-import spStSd from "../../assets/sounds/snap-suit.wav";
-import spValSd from "../../assets/sounds/snap-value.wav";
-import drAllSd from "../../assets/sounds/drawn-all.wav";
-
+// Internal Dependencies
 import Card from "../Card";
 import DrawButton from "../DrawButton";
 import useDebounce from "../../hooks/useDebounce";
 import { SNAP_WORDS } from "../../constants/constants";
 import { draw, shuffle } from "../../utils/utils";
+
+// Sounds
+import btnClkSd from "../../assets/sounds/button-click.wav";
+import spStSd from "../../assets/sounds/snap-suit.wav";
+import spValSd from "../../assets/sounds/snap-value.wav";
+import drAllSd from "../../assets/sounds/drawn-all.wav";
 
 const DeckofCards = () => {
   const [prevCard, setPrevCard] = useState({}); // previous card
@@ -85,7 +95,7 @@ const DeckofCards = () => {
           <></>
         )}
       </div>
-      <div className="cardConatiner">
+      <div className="cardsContainer">
         <Card src={prevCard.image} />
         <Card src={curCard.image} />
       </div>

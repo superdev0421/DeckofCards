@@ -1,5 +1,6 @@
+// Internal Dependencies
 import "./App.css";
-import DeckofCards from "./components/DeckofCards/DeckofCards";
+import DeckofCards from "./components/DeckofCards";
 
 function App() {
   return (

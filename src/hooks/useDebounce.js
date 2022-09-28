@@ -1,3 +1,12 @@
+/**
+==========================================
+ Title:  Custom debounce
+ Author: Edward
+ Date:   27 September 2022
+==========================================
+ */
+
+// External Dependencies
 import { useEffect, useRef } from "react";
 
 const useDebounce = (callback, delay) => {

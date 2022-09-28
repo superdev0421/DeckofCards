@@ -1,4 +1,15 @@
+/**
+==========================================
+ Title:  Util functions
+ Author: Edward
+ Date:   27 September 2022
+==========================================
+ */
+
+// External Dependencies
 import axios from "axios";
+
+// Internal Dependencies
 import { DECK_API_URL } from "../constants/constants";
 
 export const shuffle = async () => {

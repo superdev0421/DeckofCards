@@ -1,4 +1,15 @@
+/**
+==========================================
+ Title:  Util Functions Unit Testing
+ Author: Edward
+ Date:   27 September 2022
+==========================================
+ */
+
+// External Dependencies
 import axios from "axios";
+
+// Internal Dependencies
 import { shuffle, draw } from "./utils";
 
 describe("test utils", () => {
@@ -10,6 +21,7 @@ describe("test utils", () => {
       shuffled: true,
       success: true,
     };
+
     const mockedResult = {
       data: result,
     };

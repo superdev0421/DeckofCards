@@ -1,9 +1,18 @@
+/**
+==========================================
+ Title:  Deck of Cards Unit Testing
+ Author: Edward
+ Date:   27 September 2022
+==========================================
+ */
+
+// External Dependencies
 import { waitFor } from "@testing-library/react";
 import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
-
 import { mount } from "enzyme";
 import React from "react";
+
+// Internal Dependencies
 import DeckofCards from "./DeckofCards";
 
 jest.useFakeTimers();

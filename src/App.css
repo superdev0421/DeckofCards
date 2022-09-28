@@ -8,7 +8,7 @@
   font-weight: bold;
 }
 
-.cardConatiner {
+.cardsContainer {
   display: flex;
   gap: 2rem;
   justify-content: space-around;
@@ -16,6 +16,21 @@
   width: 70%;
 }
 
+.cardContainer {
+  width: 230px;
+  height: 315px;
+}
+
 .btnContainer {
   margin-top: 3rem;
+}
+
+.drawButton {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
 }

@@ -1,3 +1,12 @@
+/**
+==========================================
+ Title:  Card Component
+ Author: Edward
+ Date:   27 September 2022
+==========================================
+ */
+
+// External Dependencies
 import { useEffect, useState } from "react";
 
 const Card = ({ src }) => {
@@ -19,9 +28,9 @@ const Card = ({ src }) => {
   }, [src]);
 
   return (
-    <div className="border border-dark" style={{ width: 230, height: 315 }}>
+    <div className="border border-dark cardContainer">
       {src && loadedSrc === src ? (
-        <img src={src} alt={src} style={{ width: "100%", height: "100%" }} />
+        <img src={src} alt={src} className="card" />
       ) : (
         <></>
       )}
